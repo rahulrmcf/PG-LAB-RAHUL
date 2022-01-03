@@ -7,7 +7,10 @@ class bank:
     def deposit(self,bal):
         self.bal=self.bal+bal
     def withdraw(self,bal):
-        self.bal=self.bal-bal
+        if(self.bal==0):
+            print("Insufficient balance!")
+        else:
+            self.bal=self.bal-bal
     def display(self):
         print("Name: ",self.name)
         print("AC No : ",self.acno)
@@ -18,8 +21,21 @@ acno=int(input("Enter the account number: "))
 name=input("Enter the customer name: ")
 atype=input("Enter the account type(Savings/Current): ")
 bn=bank(acno,name,atype)
-a=int(input("Enter the amount to deposit: "))
-bn.deposit(a)
-a2=int(input("Enter the amount to withdraw: "))
-bn.withdraw(a2)
-bn.display()
+while(True):
+    print("ENTER YOUR CHOICE")
+    print()
+    print("1.Withdraw")
+    print("2.Deposit")
+    print("3.Display")
+    print("4.Exit")
+    c=int(input())
+    if(c==1):
+        a=int(input("Enter the amount to withdraw: "))
+        bn.withdraw(a)
+    if(c==2):
+        a2=int(input("Enter the amount to deposit: "))
+        bn.deposit(a2)
+    if(c==3):
+        bn.display()
+    if(c==4):
+        break
