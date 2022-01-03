@@ -4,10 +4,10 @@ class time:
         self.__mins=mins
         self.__sec=sec
     def __add__(self,a):
-        h=self.hr+a.hr
-        m=self.mins+a.mins
-        s=self.sec+a.sec
-        print(hr,m,s)
+        h=self.__hr+a.__hr
+        m=self.__mins+a.__mins
+        s=self.__sec+a.__sec
+        print(h,":",m,":",s)
 
 print("Time 1")
 h1=int(input("Enter hour: "))
